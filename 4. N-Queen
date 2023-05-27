@@ -50,26 +50,25 @@ def solveNQueens():
     board = [[0 for i in range(N)]
                 for j in range(N)]
      
-    # helper matrices
+   
     slashCode = [[0 for i in range(N)]
                     for j in range(N)]
     backslashCode = [[0 for i in range(N)]
                         for j in range(N)]
      
-    # arrays to tell us which rows are occupied
+   
     rowLookup = [False] * N
      
-    # keep two arrays to tell us
-    # which diagonals are occupied
+  
     x = 2 * N - 1
     slashCodeLookup = [False] * x
     backslashCodeLookup = [False] * x
      
-    # initialize helper matrices
+    
     for rr in range(N):
         for cc in range(N):
             slashCode[rr][cc] = rr + cc
-            # DIAGONAL CONDITION
+           
             backslashCode[rr][cc] = rr - cc + 7
      
     if(solveNQueensUtil(board, 0, slashCode, backslashCode,
@@ -78,7 +77,7 @@ def solveNQueens():
         print("Solution does not exist")
         return False
          
-    # solution found
+    
     printSolution(board)
     return True
  
